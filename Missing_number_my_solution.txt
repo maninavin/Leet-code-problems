@@ -1,0 +1,19 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+     Arrays.sort(nums);
+        int i;
+        if(nums.length == 1 && nums[0] == 0 )
+            return 1;
+        for (i=0; i<nums.length; i++){
+            if(nums[i]==i){
+                i++;
+            }
+            else{
+                return i;
+            }
+        }
+        
+        return i;
+        
+    }
+}
