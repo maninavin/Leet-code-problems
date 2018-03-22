@@ -1,0 +1,28 @@
+Given a string, determine if a permutation of the string could form a palindrome.
+
+For example,
+"code" -> False, "aab" -> True, "carerac" -> True.
+
+
+
+
+
+class Solution {
+    public boolean canPermutePalindrome(String s) {
+       
+        Set<Character> palSet = new HashSet<Character>();
+        for(int i=0; i<s.length();i++){
+            if(!palSet.contains(s.charAt(i))){
+                palSet.add(s.charAt(i));
+            }
+               else{
+                   palSet.remove(s.charAt(i));
+               }
+        }
+        
+        return (palSet.size()==0 || palSet.size()==1);
+        
+        
+
+}
+}
